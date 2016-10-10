@@ -23,3 +23,18 @@ app.get("/api/munros", function(req, res){
     res.json(JSON.parse(data));
   });
 });
+
+app.get('/api/munros/name/:name', function(req, res){
+  fs.readFile(MUNROS_JSON, function(err, data){
+    if(err) process.exit(1);
+    json = JSON.parse(data);
+    name_array = [];
+    for(munro of json){
+      if(munro.name.toLowerCase() == req.params.name.toLowerCase()){
+      name_array.push(munro);
+      }
+    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.json(name_array);
+  });
+});
