@@ -1,9 +1,10 @@
 # MUNRO API
 
-A simple JSON-based API for getting information on Munros from around Scotland.
+A simple JSON-based API for getting information about Munros from around Scotland.
 
-Routes available:
-View ALL.
-View by Name.
+**Current Routes available:**
+
+ - View All Munros.
+ - View by Munros by Name.
 
 Hosted at https://munroapi.herokuapp.com/
