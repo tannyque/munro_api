@@ -5,6 +5,8 @@ A simple JSON-based API for getting information about Munros from around Scotlan
 **Current Routes available:**
 
  - View All Munros.
- - View by Munros by Name.
+ - View Munros by Name.
+ - View Munros by SMC ID.
+ - View Munros by Region.
 
 Hosted at https://munroapi.herokuapp.com/

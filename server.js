@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.set("port", (process.env.PORT || 3003));
 
 app.listen(app.get("port"), function() {
-  console.log("Node app is running on port", app.get("port"));
+  console.log("Munro Bagger API is running on port", app.get("port"));
 });
 
 app.get("/", function(req, res){
@@ -24,6 +24,7 @@ app.get("/api/munros", function(req, res){
   });
 });
 
+// view by name
 app.get('/api/munros/name/:name', function(req, res){
   fs.readFile(MUNROS_JSON, function(err, data){
     if(err) process.exit(1);
@@ -36,5 +37,37 @@ app.get('/api/munros/name/:name', function(req, res){
     }
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(name_array);
+  });
+});
+
+//view by smcid
+app.get('/api/munros/smcid/:smcid', function(req, res){
+  fs.readFile(MUNROS_JSON, function(err, data){
+    if(err) process.exit(1);
+    json = JSON.parse(data);
+    smcid_array = [];
+    for(munro of json){
+      if(munro.smcid.toLowerCase() == req.params.smcid.toLowerCase()){
+      smcid_array.push(munro);
+      }
+    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.json(smcid_array);
+  });
+});
+
+//view by region
+app.get('/api/munros/region/:region', function(req, res){
+  fs.readFile(MUNROS_JSON, function(err, data){
+    if(err) process.exit(1);
+    json = JSON.parse(data);
+    region_array = [];
+    for(munro of json){
+      if(munro.region.toLowerCase() == req.params.region.toLowerCase()){
+      region_array.push(munro);
+      }
+    }
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.json(region_array);
   });
 });
