@@ -1,14 +1,21 @@
 {
-  "name": "munro_api",
+  "name": "munro-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An API providing details of all munros in Scotland",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "John Easton <easton3003@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-plugin-import": "2.13.0",
+    "nodemon": "1.18.3"
   }
 }
