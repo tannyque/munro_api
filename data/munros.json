@@ -1288,16 +1288,16 @@
   },
 
   {
-    "name": "Meall Ghaordie",
+    "name": "Meall Ghaordaidh",
     "height": 1039,
     "gridref_letters": "NN",
     "gridref_eastings": "51442",
     "gridref_northings": "39704",
     "latlng_lat": 56.525809,
     "latlng_lng": -4.416654,
-    "smcid": " arm",
+    "smcid": "M093",
     "metoffice_loc_id": "352586",
-    "region": " hand",
+    "region": "Loch Tay to Rannoch Moor",
     "meaning": "Gaelic gairdean, meaning a shoulder"
   },
 
